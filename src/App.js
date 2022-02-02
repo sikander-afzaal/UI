@@ -125,7 +125,10 @@ function App() {
       <div className="childElement">
         <div className="top-child">
           {/* dummy text */}
-          <p>0/11</p>
+          <p className="big">0/11</p>
+          <p className="green-add">0x80A18a709f2362A1...</p>
+          <p className="big-2">1 BE costs 0.05 ETH</p>
+          <p className="small">Excluding gas fees</p>
           {/* ---------------- */}
         </div>
         <div className="bottom-child">
@@ -140,7 +143,11 @@ function App() {
             <p>{amount}</p>
             <button
               onClick={() => {
-                setAmount(amount - 1);
+                if (amount <= 0) {
+                  return;
+                } else {
+                  setAmount(amount - 1);
+                }
               }}
             >
               -

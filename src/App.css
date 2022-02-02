@@ -6,7 +6,13 @@
   justify-content: center;
   align-items: center;
 }
-
+* {
+  box-sizing: border-box;
+}
+p,
+h1 {
+  margin: 0;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -43,15 +49,17 @@
 }
 .childElement {
   width: 35vw;
-  height: 45vh;
-  background-color: #0d0d0d;
+  height: 60vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 30px;
   flex-direction: column;
   color: white;
-  padding: 4rem 0rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(1px);
+  padding: 24px;
+  border-radius: 24px;
+  box-shadow: rgb(0 0 0 / 70%) 0px 5px 11px 2px;
 }
 .top-child,
 .bottom-child {
@@ -67,7 +75,7 @@
 .bottom-child button {
   color: white;
   background-color: #1dff30;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 9px 30px;
   border: none;
   font-size: 16px;
@@ -94,21 +102,32 @@
   align-items: center;
   width: 60%;
 }
-.childElement p {
-  font-size: 2.5rem;
+.top-child {
+  justify-content: center;
+  gap: 5px;
+}
+.big {
+  font-size: 3.5rem;
   font-weight: bold;
+}
+.big-2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.green-add {
+  color: #1dff30;
 }
 .change-div p {
   font-size: 1.5rem;
 }
 .change-div button {
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   background-color: white;
   color: black;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   display: grid;
   place-items: center;
 }
@@ -129,12 +148,12 @@
 @-webkit-keyframes snowflakes-shake {
   0%,
   100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+    -webkit-transform: translateX(0) rotate(0);
+    transform: translateX(0) rotate(0);
   }
   50% {
-    -webkit-transform: translateX(80px);
-    transform: translateX(80px);
+    -webkit-transform: translateX(80px) rotate(360deg);
+    transform: translateX(80px) rotate(360deg);
   }
 }
 
@@ -147,23 +166,23 @@
   }
 }
 .snowflake i {
-  font-size: 4rem;
+  font-size: 3rem;
   color: white;
 }
 @keyframes snowflakes-shake {
   0%,
   100% {
-    transform: translateX(0);
+    transform: translateX(0) rotate(0);
   }
   50% {
-    transform: translateX(80px);
+    transform: translateX(80px) rotate(360deg);
   }
 }
 
 .snowflake {
   position: fixed;
   top: -10%;
-  z-index: 9999;
+  z-index: 0;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -250,4 +269,42 @@
   left: 65%;
   -webkit-animation-delay: 4s, 2.5s;
   animation-delay: 4s, 2.5s;
+}
+@media screen and (max-width: 1100px) {
+  .childElement {
+    width: 80vw;
+  }
+}
+@media screen and (max-width: 511px) {
+  .childElement {
+    width: 90vw;
+  }
+  .change-div {
+    width: 90%;
+  }
+  .big {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 440px) {
+  .childElement {
+    padding: 2rem 0rem;
+  }
+  .sale-div button {
+    padding: 9px 15px;
+  }
+  .bottom-child {
+    width: 100%;
+  }
+  .sale-div {
+    width: 90%;
+  }
+  .childElement {
+    padding: 1rem 0rem;
+  }
+}
+@media screen and (max-height: 690px) {
+  .childElement {
+    height: 70vh;
+  }
 }
