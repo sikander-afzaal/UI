@@ -12,6 +12,7 @@ const address = "0x80A18a709f2362A13B95E0384689D0E6049E498d";
 function App() {
   const [accounts, setAccounts] = useState([]);
   const [amount, setAmount] = useState(1);
+  const [btn, setBtn] = useState(false);
 
   useEffect(() => {
     requestAccount();
@@ -132,7 +133,7 @@ function App() {
           {/* ---------------- */}
         </div>
         <div className="bottom-child">
-          <div className="change-div">
+          <div className={`change-div ${btn ? "show-btn" : ""}`}>
             <button
               onClick={() => {
                 setAmount(amount + 1);
@@ -158,7 +159,14 @@ function App() {
             <button onClick={Salemint}>MINT PublicSale</button>
           </div>
 
-          <button onClick={requestAccount}>Connect</button>
+          <button
+            onClick={() => {
+              setBtn(true);
+              requestAccount();
+            }}
+          >
+            Connect
+          </button>
         </div>
       </div>
     </div>

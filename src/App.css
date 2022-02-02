@@ -74,7 +74,7 @@ h1 {
 }
 .bottom-child button {
   color: white;
-  background-color: #1dff30;
+  background-color: rgba(248, 216, 89, 255);
   border-radius: 10px;
   padding: 9px 30px;
   border: none;
@@ -87,7 +87,7 @@ h1 {
   font-weight: normal;
 }
 .bottom-child button:hover {
-  color: #1dff30;
+  color: rgba(248, 216, 89, 255);
   background-color: white;
 }
 .sale-div {
@@ -101,6 +101,13 @@ h1 {
   justify-content: space-evenly;
   align-items: center;
   width: 60%;
+  transition: all 0.35s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+.show-btn {
+  opacity: 1;
+  visibility: visible;
 }
 .top-child {
   justify-content: center;
@@ -115,7 +122,7 @@ h1 {
   font-weight: bold;
 }
 .green-add {
-  color: #1dff30;
+  color: rgba(248, 216, 89, 255);
 }
 .change-div p {
   font-size: 1.5rem;
